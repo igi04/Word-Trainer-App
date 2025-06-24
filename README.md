@@ -23,7 +23,7 @@ python main.py
 
 ![Start window](screenshots/start_screen.png)
 
-![Mode selection window](screenshots/mode_selection_window.png)
+![Mode selection window](screenshots/mode_selection_screen.png)
 
 ![Words list window](screenshots/words_list_screen.png)
 
