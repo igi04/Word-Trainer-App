@@ -4,7 +4,7 @@ from logic.app_data import AppData
 from .words_list_window import WordsListWindow
 from .flashcards_window import FlashcardsWindow
 from .learning_window import LearningWindow
-from .options import Options
+from .options_window import Options
 
 class ModeSelection(BaseWindow):
     def __init__(self, app_data):
@@ -48,7 +48,7 @@ class ModeSelection(BaseWindow):
         next_window.run()
 
     def on_click_go_back(self):
-        from .load_file_GUI import LoadFileGUI
+        from .load_file_window import LoadFileGUI
         previous_window = LoadFileGUI(self.app_data)
         self.destroy()
         previous_window.run()

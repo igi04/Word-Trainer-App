@@ -2,7 +2,7 @@ from tkinter import *
 
 from .base_window import BaseWindow
 from logic.file_loader import FileLoader
-from .mode_selection import ModeSelection
+from .mode_selection_window import ModeSelection
 from logic.app_data import AppData
 
 class LoadFileGUI(BaseWindow):
@@ -13,8 +13,8 @@ class LoadFileGUI(BaseWindow):
         self.build_interface()
 
     def build_interface(self):
-        label = Label(self.window, text="Word Trainer App", font=("Helvetica", 30, "bold"))
-        label.pack(pady=100)
+        label = Label(self.window, text="Word Trainer App", font=("Helvetica", 35, "bold"))
+        label.pack(pady=(150,40))
 
         button = Button(self.window, command=self.on_load_click, text="Load set to exercise", font=("Helvetica", 30, "bold"))
         button.pack(expand=True, padx=10, pady=10)

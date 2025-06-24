@@ -39,7 +39,7 @@ class Options(BaseWindow):
 
 
     def on_click_go_back(self):
-        from .mode_selection import ModeSelection
+        from .mode_selection_window import ModeSelection
         previous_window = ModeSelection(self.app_data)
         self.destroy()
         previous_window.run()

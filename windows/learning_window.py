@@ -45,7 +45,7 @@ class LearningWindow(BaseWindow):
         self.show_word_on_the_beginning()
 
     def on_click_go_back(self):
-        from .options import Options
+        from .options_window import Options
         previous_window = Options(self.app_data, "learning")
         self.destroy()
         previous_window.run()
@@ -68,12 +68,14 @@ class LearningWindow(BaseWindow):
                 self.answer_entry.config(state="disabled")
                 self.submit_button.config(state="disabled")
                 self.question_label.config(text="All done! 🎉")
-                self.window.after(2000, lambda: self.show_summary())
+                self.window.unbind("<Return> "
+                                   "")
+                self.window.after(1500, lambda: self.show_summary())
 
         else:
             self.learning_engine.fail_counter += 1
             self.feedback_label.config(text=f"❌ Wrong answer! Correctly: {correct_answer.upper()}", fg="red", font=("Helvetica", 16, "bold"))
-            self.window.after(2800, lambda: self.feedback_label.config(text=""))
+            self.window.after(3000, lambda: self.feedback_label.config(text=""))
             self.question_label.config(text=self.learning_engine.get_next_word())
 
         self.progress_update()

@@ -8,12 +8,17 @@ class FileLoader:
         self.window = window
 
     def load_file_dialog(self):
-        file_types = [("Text files", "*.txt"), ("All files", "*.*")]
+        file_types = [("Text files", "*.txt")]
 
         try:
             self.app_data.filepath = filedialog.askopenfilename(title="Choose set to exercise", filetypes=file_types)
             self.app_data.word_dict = self.parse_txt_file(self.app_data.filepath)
-            messagebox.showinfo("Success", "Your set was loaded properly")
+
+            if len(self.app_data.word_dict) == 0:
+                messagebox.showerror("Error", "Your file is empty or contains invalid form of learning set ", )
+            else:
+                messagebox.showinfo("Success", "Your set was loaded properly")
+
 
         except:
             messagebox.showerror("Error", "Something went wrong with loading file. Try again",)

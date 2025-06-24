@@ -13,10 +13,9 @@ class SummaryWindow(BaseWindow):
         self.success_count = self.total_words - self.fail_counter
 
         self.build_interface()
-
     def build_interface(self):
         # Title label
-        title = Label(self.window, text="Learning Summary", font=("Helvetica", 28, "bold"))
+        title = Label(self.window, text="Learning Summary", font=("Helvetica", 30, "bold"))
         title.pack(pady=20)
 
         # Text summary
@@ -28,12 +27,12 @@ class SummaryWindow(BaseWindow):
         self.plot_summary_chart()
 
         # Back to menu
-        back_btn = Button(self.window, command=self.back_to_menu, text="Back to Menu", font=("Helvetica", 18))
+        back_btn = Button(self.window, command=self.back_to_menu, text="Back to Menu", font=("Helvetica", 25, "bold"))
         back_btn.pack(pady=18)
 
 
     def back_to_menu(self):
-        from .mode_selection import ModeSelection
+        from .mode_selection_window import ModeSelection
         previous_window = ModeSelection(self.app_data)
         self.destroy()
         previous_window.run()

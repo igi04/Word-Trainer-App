@@ -1,5 +1,5 @@
 #Components import
-from windows.load_file_GUI import LoadFileGUI
+from windows.load_file_window import LoadFileGUI
 from logic.app_data import AppData
 
 
