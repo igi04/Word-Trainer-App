@@ -2,6 +2,7 @@ from tkinter import *
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 
+#Components import
 from .base_window import BaseWindow
 
 class SummaryWindow(BaseWindow):
@@ -13,17 +14,23 @@ class SummaryWindow(BaseWindow):
         self.success_count = self.total_words - self.fail_counter
 
         self.build_interface()
+
     def build_interface(self):
         # Title label
-        title = Label(self.window, text="Learning Summary", font=("Helvetica", 30, "bold"))
+        title = Label(self.window,
+                      text="Learning Summary",
+                      font=("Helvetica", 30, "bold"))
         title.pack(pady=20)
 
         # Text summary
         summary_text = f"✅ Correct: {self.success_count}\n❌ Incorrect: {self.fail_counter}"
-        summary_label = Label(self.window, text=summary_text, font=("Helvetica", 18))
+
+        summary_label = Label(self.window,
+                              text=summary_text,
+                              font=("Helvetica", 18))
         summary_label.pack(pady=18)
 
-        #Bar chart
+        #Show the bar chart
         self.plot_summary_chart()
 
         # Back to menu
@@ -37,6 +44,7 @@ class SummaryWindow(BaseWindow):
         self.destroy()
         previous_window.run()
 
+    #The works of plot bar in Matplotlib
     def plot_summary_chart(self):
         fig, ax = plt.subplots(figsize=(4, 3), dpi=100, facecolor='#f0f0f0')
         categories = ['Correct', 'Incorrect']

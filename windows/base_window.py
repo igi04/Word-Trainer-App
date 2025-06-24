@@ -1,14 +1,19 @@
 from ttkbootstrap import Style
 from tkinter import *
 
+#Base window from which every another window inheritances
 class BaseWindow:
     def __init__(self, title="Word Trainer App", style="superhero"):
+        #Create Tk() object
         self.window = Tk()
+
+        #Set style theme from ttkbootstrap
         self.style = Style(theme=style)
+
         self.window.title(title)
         self.set_geometry()
-        # self.window.configure(bg=self.style.colors.bg)
-        # self.set_styles()
+
+    # Set responsive geometry of window
     def set_geometry(self):
         screen_width = self.window.winfo_screenwidth()
         screen_height = self.window.winfo_screenheight()
@@ -18,16 +23,10 @@ class BaseWindow:
         y = (screen_height - height) // 2
         self.window.geometry(f"{width}x{height}+{x}+{y}")
 
-    # def set_styles(self):
-    #     # Style
-    #     my_button_style = ttk.Style()
-    #     my_button_style.configure('light.Outline.TButton', font=("Helvetica", 30))
-    #
-    #     my_radio_style = ttk.Style()
-    #     my_radio_style.configure("success.TRadiobutton", font=("Helvetica", 30), bootstyle="success-round-toggle")
-
+    #Run the window
     def run(self):
         self.window.mainloop()
 
+    #Destroy the window
     def destroy(self):
         self.window.destroy()

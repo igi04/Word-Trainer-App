@@ -1,9 +1,9 @@
 from tkinter import *
+
+#Components import
 from .base_window import BaseWindow
 from logic.app_data import AppData
 from .words_list_window import WordsListWindow
-from .flashcards_window import FlashcardsWindow
-from .learning_window import LearningWindow
 from .options_window import Options
 
 class ModeSelection(BaseWindow):
@@ -13,23 +13,36 @@ class ModeSelection(BaseWindow):
         self.build_interface()
 
     def build_interface(self):
-        go_back_button = Button(self.window, command=self.on_click_go_back, text="⬅️", font=("helvetica", 30))
+        go_back_button = Button(self.window,
+                                command=self.on_click_go_back,
+                                text="⬅️",
+                                font=("helvetica", 30))
         go_back_button.pack(anchor="nw")
 
-        label = Label(self.window, text="Choose the game mode you are interested in", font=("Helvetica", 27, "bold"))
+        label = Label(self.window,
+                      text="Choose the game mode you are interested in",
+                      font=("Helvetica", 27, "bold"))
         label.pack(pady=50)
 
-        button_flashcards = Button(self.window, command=self.on_click_flashcards, text="FLASH CARDS", font=("Helvetica", 27, "bold"))
+        button_flashcards = Button(self.window,
+                                   command=self.on_click_flashcards,
+                                   text="FLASH CARDS", font=("Helvetica", 27, "bold"))
         button_flashcards.pack(expand=True, padx=10, pady=10)
 
-        button_learning = Button(self.window, command=self.on_click_learning, text="LEARNING", font=("Helvetica", 30, "bold"))
+        button_learning = Button(self.window,
+                                 command=self.on_click_learning,
+                                 text="LEARNING",
+                                 font=("Helvetica", 30, "bold"))
         button_learning.pack(expand=True, padx=10, pady=10)
 
-        button_words = Button(self.window, command=self.on_click_words_list, text="LIST OF WORDS", font=("Helvetica", 27, "bold"))
+        button_words = Button(self.window,
+                              command=self.on_click_words_list,
+                              text="LIST OF WORDS",
+                              font=("Helvetica", 27, "bold"))
         button_words.pack(expand=True, padx=10, pady=10)
 
 
-
+    #The works of launching new windows
     def on_click_words_list(self):
         next_window = WordsListWindow(self.app_data)
         self.destroy()
