@@ -19,3 +19,21 @@ python main.py
 - word - meaning
 - word - meaning
 
+## Screenshots
+
+![Start window](screenshots/start_screen.png)
+
+![Mode selection window](screenshots/mode_selection_window.png)
+
+![Words list window](screenshots/words_list_screen.png)
+
+![Learning direction window](screenshots/learning_direction_screen.png)
+
+![Flashcards window](screenshots/flashcards_screen.png)
+
+![Learning mode window](screenshots/learning_screen.png)
+
+![Check answer](screenshots/check_answer.png)
+
+![Summary window](screenshots/summary_screen.png)
+
