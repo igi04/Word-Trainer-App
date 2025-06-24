@@ -28,6 +28,7 @@ class LoadFileGUI(BaseWindow):
     #Launch load file works
     def on_load_click(self):
         self.file_loader.load_file_dialog()
-        next_window = ModeSelection(self.app_data)
-        self.destroy()
-        next_window.run()
+        if len(self.app_data.word_dict) != 0:
+            next_window = ModeSelection(self.app_data)
+            self.destroy()
+            next_window.run()
