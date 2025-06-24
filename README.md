@@ -14,9 +14,8 @@ python main.py
 ```
 
 ## How to preapre learning set correctly
--File with .txt extension
--Structure of file:
-word - meaning
-word - meaning
-.
-.
+- File with .txt extension
+- Structure of file:
+- word - meaning
+- word - meaning
+
